@@ -43,12 +43,12 @@
 <section>
 <div class="jumbo">
 <div class="jumbo-header">
-<h2>upload a pdf file</h2>
-<h2> or an image</h2>
+<h2>upload a image file</h2>
 </div>
 
-<form action="">
-    <div class="form-upload">
+<form action="{% url 'invoiceAppUrls:indexPage' %}" method="post" enctype="multipart/form-data">
+    <div class="form-upload" >
+      {% csrf_token %}
         <input id="files" type="file">
         <button type="submit" >Upload</button>
     </div>
@@ -60,6 +60,11 @@
 
 <!-- main -->
 <div class="main col-sm-10">
+{% if dat %}
+{% for i in data %}
+<h2>i</h2>
+{% endfor %}
+{% endif %}
 </div>
 <!-- main -->
 
