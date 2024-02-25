@@ -7,8 +7,8 @@ from .extract import *
 class IndexPageView(TemplateView):
     template_name = "index.html"
 
-    def post(self,request, *args, **kwargs):
-        file = request.FILES
+    def post(self,request):
+        file = request.FILES['file']
         data = extract_img(file)
         context = {
             "data":data

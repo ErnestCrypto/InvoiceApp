@@ -49,7 +49,7 @@
 <form action="{% url 'invoiceAppUrls:indexPage' %}" method="post" enctype="multipart/form-data">
     <div class="form-upload" >
       {% csrf_token %}
-        <input id="files" type="file">
+        <input id="files" type="file" name="file">
         <button type="submit" >Upload</button>
     </div>
 </form>
@@ -60,9 +60,9 @@
 
 <!-- main -->
 <div class="main col-sm-10">
-{% if dat %}
+{% if data %}
 {% for i in data %}
-<h2>i</h2>
+<h2>{{i}}</h2>
 {% endfor %}
 {% endif %}
 </div>
